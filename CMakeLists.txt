@@ -14,8 +14,8 @@ set(
 include("tools/gate/cmake/HunterGate.cmake")
 
 HunterGate(
-  URL "https://github.com/cpp-pm/hunter/archive/v0.23.218.tar.gz"
-  SHA1 "9a3594a61227967fb92159339ba326701b287b19"
+        URL "https://github.com/cpp-pm/hunter/archive/v0.18.58.tar.gz"
+        SHA1 "3b39effc5ee1af4ef7487eabb1b0a7a7e10a7b3e"
 )
 
 
@@ -37,6 +37,12 @@ add_executable(tests
   # TODO: enum your files and delete this comment
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
 )
+
+add_library(parser STATIC
+        # enum your files and delete this comment
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources/JSON.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources/Students.cpp
+        )
 
 # TODO: change template word to project name and delete this comment
 target_include_directories(template 
