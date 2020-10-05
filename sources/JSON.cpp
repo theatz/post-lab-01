@@ -58,7 +58,8 @@ void JSON::create_vec(json &j)
     else if (it->at("debt").is_string())
       st.debt.push_back(it->at("debt").get<string>());
     else if (it->at("debt").is_array())
-      for(json::const_iterator i = it->at("debt").cbegin();i != it->at("debt").cend(); i++)
+      for(json::const_iterator i = it->at("debt").cbegin();
+           i != it->at("debt").cend(); i++)
       {
         st.debt.push_back(i.value());
       }
@@ -82,15 +83,20 @@ void JSON::get_length()
   for(int i = 0;i<_size_vector;i++) {
     all_students[i].len_name = all_students[i].name.length();
     if (all_students[i].group.type() == typeid(string))
-      all_students[i].len_group = (any_cast<string>(all_students[i].group).length());
+      all_students[i].len_group =
+          (any_cast<string>(all_students[i].group).length());
     else if (all_students[i].group.type() == typeid(int))
-    all_students[i].len_group = to_string((any_cast<int>((all_students[i].group)))).length();
+    all_students[i].len_group =
+          to_string((any_cast<int>((all_students[i].group)))).length();
     else if (all_students[i].group.type() == typeid(float))
-      all_students[i].len_group = to_string((any_cast<float>((all_students[i].group)))).length();
+      all_students[i].len_group =
+          to_string((any_cast<float>((all_students[i].group)))).length();
     if (all_students[i].avg.type() == typeid(string))
-      all_students[i].len_avg = (any_cast<string>(all_students[i].avg).length());
+      all_students[i].len_avg =
+          (any_cast<string>(all_students[i].avg).length());
     else if (all_students[i].avg.type() == typeid(int))
-      all_students[i].len_avg = to_string((any_cast<int>((all_students[i].avg)))).length();
+      all_students[i].len_avg =
+          to_string((any_cast<int>((all_students[i].avg)))).length();
     else if (all_students[i].avg.type() == typeid(float))
       all_students[i].len_avg = 4;
 
@@ -100,7 +106,8 @@ void JSON::get_length()
       if(all_students[i].debt[0].type() == typeid(nullptr))
         all_students[i].len_debt = 7;
       else if(all_students[i].debt[0].type() == typeid(string))
-        all_students[i].len_debt = (any_cast<string>(all_students[i].debt[0]).length());
+        all_students[i].len_debt = (any_cast<string>
+            (all_students[i].debt[0]).length());
     }
     else all_students[i].len_debt = 7;
   }

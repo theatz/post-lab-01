@@ -1,4 +1,4 @@
-// Copyright 2018 Your Name <your_email>
+// Copyright 2020 Danil Postvaykin <postvaykin01@mail.ru>
 
 #include <gtest/gtest.h>
 #include "JSON.hpp"
@@ -46,7 +46,6 @@ TEST(Parser, JSON) {
   first.create_vec(jes);
   first.out();
 }
-
 TEST(String, InvalidString){
   std::cout << "Test2 started!" << endl;
   std::string test_string =\
@@ -80,7 +79,6 @@ R"({
   }
 })";
   try {
-
     JSON st(test_string);
     json jes = st.get_js();
     st.create_vec(jes);
@@ -92,7 +90,6 @@ R"({
     EXPECT_EQ(expected, ref_string);
   }
 }
-
 TEST(Parse, FromFile){
   std::cout << "Test3 started!" << endl;
   try {
@@ -100,7 +97,7 @@ TEST(Parse, FromFile){
     string path = "table.json";
     st.read_file(path);
     st.out();
-  } catch (const std::runtime_error& e) {
+  } catch (const std::runtime_error& e){
     string expected = e.what();
     std::cout << expected << std::endl;
     string ref_string = "File error";
