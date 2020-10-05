@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/parser.dir/sources/JSON.cpp.o"
-  "CMakeFiles/parser.dir/sources/Students.cpp.o"
   "libparserd.a"
   "libparserd.pdb"
 )

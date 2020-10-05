@@ -1,6 +1,5 @@
 /home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/tests.dir
 /home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/parser.dir
-/home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/template.dir
 /home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/test.dir
+/home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/tests.dir
+/home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -11,12 +11,12 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
-  "/home/danil/.hunter/_Base/3b39eff/f743b0b/b8edd37/Install/include"
+  "/home/danil/.hunter/_Base/9a3594a/2c824f9/48401e9/Install/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/template.dir/DependInfo.cmake"
+  "/home/danil/LR1/lab-01-parser/cmake-build-debug/CMakeFiles/parser.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

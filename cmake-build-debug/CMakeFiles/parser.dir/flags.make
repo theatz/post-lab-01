@@ -6,5 +6,5 @@ CXX_FLAGS =  -pedantic -Werror -Wall -Wextra -Wno-unused-command-line-argument -
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/danil/LR1/lab-01-parser/include -isystem /home/danil/.hunter/_Base/9a3594a/2c824f9/48401e9/Install/include 
 

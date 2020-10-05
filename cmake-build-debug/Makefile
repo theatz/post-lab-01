@@ -87,17 +87,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/126/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -108,6 +97,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/snap/clion/126/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -142,19 +142,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tests
-
-# Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
-
-# fast build rule for target.
-tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-.PHONY : tests/fast
-
-#=============================================================================
 # Target rules for targets named parser
 
 # Build rule for target.
@@ -168,17 +155,17 @@ parser/fast:
 .PHONY : parser/fast
 
 #=============================================================================
-# Target rules for targets named template
+# Target rules for targets named tests
 
 # Build rule for target.
-template: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 template
-.PHONY : template
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
 
 # fast build rule for target.
-template/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/template.dir/build.make CMakeFiles/template.dir/build
-.PHONY : template/fast
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
 sources/JSON.o: sources/JSON.cpp.o
 
@@ -206,60 +193,6 @@ sources/JSON.s: sources/JSON.cpp.s
 sources/JSON.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/sources/JSON.cpp.s
 .PHONY : sources/JSON.cpp.s
-
-sources/Students.o: sources/Students.cpp.o
-
-.PHONY : sources/Students.o
-
-# target to build an object file
-sources/Students.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/sources/Students.cpp.o
-.PHONY : sources/Students.cpp.o
-
-sources/Students.i: sources/Students.cpp.i
-
-.PHONY : sources/Students.i
-
-# target to preprocess a source file
-sources/Students.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/sources/Students.cpp.i
-.PHONY : sources/Students.cpp.i
-
-sources/Students.s: sources/Students.cpp.s
-
-.PHONY : sources/Students.s
-
-# target to generate assembly for a file
-sources/Students.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/sources/Students.cpp.s
-.PHONY : sources/Students.cpp.s
-
-sources/source.o: sources/source.cpp.o
-
-.PHONY : sources/source.o
-
-# target to build an object file
-sources/source.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/template.dir/build.make CMakeFiles/template.dir/sources/source.cpp.o
-.PHONY : sources/source.cpp.o
-
-sources/source.i: sources/source.cpp.i
-
-.PHONY : sources/source.i
-
-# target to preprocess a source file
-sources/source.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/template.dir/build.make CMakeFiles/template.dir/sources/source.cpp.i
-.PHONY : sources/source.cpp.i
-
-sources/source.s: sources/source.cpp.s
-
-.PHONY : sources/source.s
-
-# target to generate assembly for a file
-sources/source.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/template.dir/build.make CMakeFiles/template.dir/sources/source.cpp.s
-.PHONY : sources/source.cpp.s
 
 tests/test.o: tests/test.cpp.o
 
@@ -298,17 +231,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... parser"
-	@echo "... template"
 	@echo "... tests"
 	@echo "... sources/JSON.o"
 	@echo "... sources/JSON.i"
 	@echo "... sources/JSON.s"
-	@echo "... sources/Students.o"
-	@echo "... sources/Students.i"
-	@echo "... sources/Students.s"
-	@echo "... sources/source.o"
-	@echo "... sources/source.i"
-	@echo "... sources/source.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"

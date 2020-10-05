@@ -1,36 +1,51 @@
-#ifndef TEMPLATE_JSON_HPP
-#define TEMPLATE_JSON_HPP
+#pragma once
 
 #include <vector>
+#include <iostream>
 #include <string>
-#include "Students.hpp"
+#include <nlohmann/json.hpp>
+#include <vector>
+#include <iomanip>
+#include <string>
+#include <fstream>
+#include <any>
 
 using namespace std;
+using nlohmann::json;
+
+struct Students
+{
+  string name;
+  any group;
+  any avg;
+  vector<any> debt;
+  int len_name;
+  int len_group;
+  int len_avg;
+  int len_debt;
+};
 
 class JSON {
  public:
-  JSON(string &str)
+  JSON(string &j);
+  JSON();
+  void create_vec(json &j);
+  json get_js();
   ~JSON();
+  void read_file(string &path);
+  void out();
+  void len_all();
+  void get_length();
+  void length_max();
 
-
-};
-
-#endif  // TEMPLATE_JSON_HPP
-
-class JsonTable {
- public:
-  explicit JsonTable(const std::string& s);
-  explicit JsonTable(const json& j);
-  ~JsonTable();
-
-  void print(std::ostream& out) const;
-
-  static JsonTable parse(const std::string& s);
-  static JsonTable parseFile(const std::string& s);
-
+  int len_name_max = 0;
+  int len_group_max = 0;
+  int len_avg_max = 7;
+  int len_debt_max = 0;
  private:
-  std::vector<Student> m_data;
-  std::vector<uint32_t> m_maxWidths;
+  json _j;
+  vector<Students> all_students;
+  int _size_vector = 0;
+  string str = "";
 };
 
-std::ostream& operator<<(std::ostream& out, JsonTable table);

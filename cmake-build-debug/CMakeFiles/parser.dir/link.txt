@@ -1,2 +1,2 @@
-/usr/bin/ar qc libparserd.a  CMakeFiles/parser.dir/sources/JSON.cpp.o CMakeFiles/parser.dir/sources/Students.cpp.o
+/usr/bin/ar qc libparserd.a  CMakeFiles/parser.dir/sources/JSON.cpp.o
 /usr/bin/ranlib libparserd.a

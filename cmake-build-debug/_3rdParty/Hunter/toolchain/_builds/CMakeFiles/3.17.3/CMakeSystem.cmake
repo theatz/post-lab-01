@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Linux")
 set(CMAKE_HOST_SYSTEM_VERSION "5.4.0-48-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-
+include("/home/danil/LR1/lab-01-parser/GCC-9FIX.cmake")
 
 set(CMAKE_SYSTEM "Linux-5.4.0-48-generic")
 set(CMAKE_SYSTEM_NAME "Linux")
